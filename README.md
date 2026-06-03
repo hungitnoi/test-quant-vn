@@ -9,9 +9,9 @@ Chiến lược giao dịch phái sinh (VN30F1M) kết hợp tín hiệu Alpha d
 
 ## 2. Performance Metrics (Backtest Results)
 * **Sharpe Ratio:** 2.377
-* **Max Drawdown:** [Điền %]
-* **Win Rate:** [Điền %]
-* **Profit Factor:** [Điền hệ số]
+* **Max Drawdown:** -12.58%
+* **Win Rate:** 38.90%
+* **Profit Factor:** 1.657
 
 ## 3. How to Run
 ```bash
