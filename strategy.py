@@ -12,11 +12,7 @@ from quantvn.vn.metrics import (
 )
 
 def gen_position(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Alpha2004 + DerivativeStrategy (Bản Tối Ưu Max Drawdown)
-    - Thay thế SL/TP cố định bằng Trailing Stop dựa trên ATR (Average True Range).
-    - Giảm atr_multiplier xuống 1.8 để siết chặt Trailing Stop, ép Max Drawdown xuống thấp.
-    """
+
 
     # =========================
     # PARAMS (Alpha2004 & Strategy)
