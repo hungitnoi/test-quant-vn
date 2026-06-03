@@ -21,5 +21,8 @@ pip install -r requirements.txt
 # Tạo file .env và thêm API Key
 echo "QUANTVN_API_KEY=your_api_key_here" > .env
 
+# Test API đã connect được chưa
+python TEST_API.py
+
 # Chạy chiến lược
-python main.py
+python strategy.py
