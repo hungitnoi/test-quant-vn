@@ -14,15 +14,63 @@ Chiến lược giao dịch phái sinh (VN30F1M) kết hợp tín hiệu Alpha d
 * **Profit Factor:** 1.657
 
 ## 3. How to Run
+
+### Bước 1: Clone dự án về máy
 ```bash
-# Cài đặt thư viện
+git clone https://github.com/hungitnoi/test-quant-vn.git
+cd test-quant-vn
+
+```
+
+### Bước 2: Khởi tạo và kích hoạt môi trường ảo (Virtual Environment)
+
+Việc sử dụng môi trường ảo giúp tránh xung đột thư viện với hệ thống gốc.
+
+**Đối với Windows:**
+
+```bash
+python -m venv .venv
+.\.venv\Scripts\activate
+
+```
+
+*(Nếu PowerShell báo lỗi execution policy, hãy mở Command Prompt (cmd) để chạy, hoặc dùng lệnh: `Set-ExecutionPolicy Unrestricted -Scope Process`)*
+
+**Đối với macOS / Linux:**
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+
+```
+
+### Bước 3: Cài đặt thư viện phụ thuộc
+
+Đảm bảo bạn đang ở trong môi trường ảo, sau đó chạy:
+
+```bash
 pip install -r requirements.txt
 
-# Tạo file .env và thêm API Key
-echo "QUANTVN_API_KEY=your_api_key_here" > .env
+```
 
-# Test API đã connect được chưa
-python TEST_API.py
+### Bước 4: Thiết lập biến môi trường (API Key)
 
-# Chạy chiến lược
+Dự án yêu cầu API Key của QuantVN để lấy dữ liệu.
+
+1. Tạo một file mới có tên chính xác là `.env` tại thư mục gốc của dự án.
+2. Mở file bằng Text Editor (VS Code, Notepad, v.v.) và nhập vào nội dung sau:
+
+```env
+QUANTVN_API_KEY=your_actual_api_key_here
+
+```
+
+> **⚠️ Lưu ý quan trọng cho người dùng Windows:** Vui lòng tạo file thủ công. **KHÔNG** sử dụng lệnh `echo ... > .env` trong PowerShell vì PowerShell mặc định lưu file dưới chuẩn UTF-16, sẽ gây lỗi `UnicodeDecodeError` khi Python (yêu cầu UTF-8) đọc file.
+
+### Bước 5: Chạy chiến lược và xem kết quả Backtest
+
+```bash
 python strategy.py
+
+```
+
